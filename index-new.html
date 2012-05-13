@@ -13,7 +13,8 @@
 			console.log(navigator.geolocation.getCurrentPosition);
 			if ( navigator.geolocation )
 				{
-					navigator.geolocation.getCurrentPosition(handlePosition, displayError, { enableHighAccuracy: true, timeout: 10000 });
+					var timeoutVal = 10 * 1000 * 1000;
+					navigator.geolocation.getCurrentPosition(handlePosition, displayError, { enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 });
 				}
 			 else {
             setMessage("Geolocation is not supported by this browser", "Geolocation is not supported by this browser");   
