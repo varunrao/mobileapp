@@ -56,8 +56,6 @@ $(document).ready(function() {
 					$('#map_holder').show();
 					$('#new').live("pageshow", function() {
 							showMap(note.get("latitude"), note.get("longitude"));
-							//$("#mapLocation").show();
-							$("#mapLocation").removeClass("ui-btn-hidden");
 						});
 	       	}
 			else
@@ -214,6 +212,7 @@ $(document).ready(function() {
 				self.search({ 'location': yourStartLatLng }, function(results, status) {
 					if ( status === 'OK' ) {
 						$('#mapLocation').html(results[0].formatted_address);
+						$("#mapLocation").removeClass("ui-btn-hidden");
 						//$("#mapLocation").text(results[0].formatted_address);
 					}
 				}); 
